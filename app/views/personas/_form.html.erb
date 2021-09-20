@@ -1,0 +1,49 @@
+<%= form_with(model: persona) do |form| %>
+  <% if persona.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
+
+      <ul>
+        <% persona.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <div class="row">
+      <div class="field col-md-6">
+        <%= form.label :dni , class:""%>
+        <%= form.number_field :dni , class:"col-4 form-control rounded-lg"%>
+      </div>
+
+      <div class="field col-md-6">
+        <%= form.label :nombre , class:""%>
+        <%= form.text_field :nombre , class:"form-control rounded-lg"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field col-md-6">
+        <%= form.label :apellido , class:""%>
+        <%= form.text_field :apellido , class:"form-control rounded-lg"%>
+      </div>
+
+      <div class="field col-md-6">
+        <%= form.label "Fecha de nacimiento" , class:""%>
+        
+          <%= form.text_field :fecha_nac, class:"form-control mt-2",:start_time=> 1930,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-d-m",
+            flatpickr_min_date: 1930
+          }
+          %>        
+      </div>
+
+      <div class="actions m-2">
+        <%= form.submit "Confirmar", class:"btn btn-sm btn-success rounded-pill"%>
+      </div>
+
+  </div>
+<% end %>

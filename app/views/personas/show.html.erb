@@ -1,0 +1,29 @@
+
+<p id="notice" class="text-success text-center m-3"><%= notice %></p>
+
+<div class=" col-3 card bg-info card-hover text-light">
+  <h3 class="card-title m-2">  
+    <%= @persona.nombre + " " + @persona.apellido  %>
+  </h3>
+
+  <div class="card-body text-light">
+    <p >  
+      <strong>Dni:</strong>
+      <%= @persona.dni %>   
+    </p>
+    <p>
+      <strong>Fecha de nacimiento:</strong>
+      <%= @persona.fecha_nac.strftime("%d/%m/%Y") %>
+    </p>
+
+    <p>
+      <strong>Edad:</strong>
+      <%= @edad %>
+    </p>
+  </div>
+
+
+</div>
+
+<%= link_to 'Volver', personas_path, class:"btn btn-info btn-sm rounded-pill mt-3" %> |
+<%= link_to 'Editar', edit_persona_path(@persona), class:"btn btn-dark btn-sm rounded-pill mt-3" %>

@@ -1,0 +1,22 @@
+// Place all the styles related to the personas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1{
+    color: #283593;
+}
+
+
+
+.card{
+    border-radius: 20px!important;
+    padding: 20px;
+    transition: 0.5s;
+    
+}
+
+.card:hover{    
+    opacity: 70%;
+    
+    
+}
